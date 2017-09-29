@@ -1,0 +1,60 @@
+<div class="modal-content" id="<?= $modalSql["idTravaux"] ;?>">
+
+    <!-- HEADER -->
+    <div class="modal-header">
+
+        <h2><?= $modalSql["titre"] ;?></h2> <!-- titre -->
+        <p><em><?= $modalSql["techniques"] ;?></em></p><!-- techniques -->
+        <p><?= $modalSql["dateCrea"] ?></p>
+    </div>
+
+    <!-- BODY-->
+    <div class="modal-body">
+
+    <!-- ELEMENT UNO -->
+
+        <!-- Ou Video-->
+        <?php if ( $modalSql["video"]  != NULL ):?>
+            <div class="videoWrapper">
+                <iframe width="1280" height="720" src="<?= $modalSql["video"] ;?>" frameborder="0" allowfullscreen align="center"></iframe>
+            </div>
+        <?php endif; ?>
+
+        <!-- Visuel1-->
+        <?php if ( $modalSql["visuel1"]  != NULL ):?>
+            <img src="<?= $modalSql["visuel1"] ;?>" alt="<?= $modalSql["titre"] ;?>" />
+        <?php endif; ?>
+
+        <!-- Ou Flash-->
+        <?php if ( $modalSql["flash"]  != NULL ){
+            echo $modalSql["flash"];
+            }
+            ?>
+
+
+    <!-- DESCRIPTION UNO -->
+        <p><?= $modalSql["description1"] ?></p>
+
+    <!-- VISUEL DEUX -->
+        <?php if ( $modalSql["visuel2"]  != NULL ):?>
+            <img src="<?= $modalSql["visuel2"] ;?>" alt="<?= $modalSql["titre"] ;?>" />
+        <?php endif; ?>
+
+    <!-- DESCRIPTION DEUX -->
+        <?php if ( $modalSql["description2"]  != NULL ):?>
+            <p><?= $modalSql["description2"] ?></p>
+        <?php endif; ?>
+
+    <!-- VISUEL TROIS -->
+        <?php if ( $modalSql["visuel3"]  != NULL ):?>
+            <img src="<?= $modalSql["visuel3"] ;?>" alt="<?= $modalSql["titre"] ;?>" />
+        <?php endif; ?>
+
+    <!-- DESCRIPTION TROIS -->
+        <?php if ( $modalSql["description3"]  != NULL ):?>
+            <p><?= $modalSql["description3"] ?></p>
+        <?php endif; ?>
+
+    </div><!--
+    --><div class="modal-footer"></div>
+</div>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
+    <link href="https://fonts.googleapis.com/css?family=BenchNine|Economica|Open+Sans+Condensed:300|Wire+One|Quicksand:300" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/stylehome.css" />
+    <link rel="stylesheet" type="text/css" href="css/popupstyle.css" />
+    <!-- JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.min.js"
+      integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+      crossorigin="anonymous"></script>
+    <script type="text/javascript" src="js/DiagonalSlider.js"></script>
+
+    <title>Maxime Dolo</title>
+
+</head>
+<body>
+
+    <!-- HEADER -->
+    <?php
+        include("headerhome.php");
+     ?>
+   <!-- HEADER -->
+
+
+    <main><!-- MAIN CONTENT -->
+        <nav>
+            <div class="content_slider">
+        		<div class="gallery_content">
+                    <!-- On lance le bouclage PHP pour créer nos catégories -->
+                    <?php
+                    foreach ($category as $sectionOnSlider) :
+                     ?>
+        			<div class="gallery_item">
+                        <!-- Catégories clicables vers category.php générés à l'aide de PHP -->
+        				<a href="category.php?section=<?= $sectionOnSlider["section"];?>">
+                            <img class="imgslider" src="<?= $sectionOnSlider["imageSlider"];?>"
+                                 data-title="<?= $sectionOnSlider["section"]; ?>"/>
+                        </a>
+        			</div>
+                    <?php
+                    endforeach
+                    ?> <!-- On ferme le bouclage PHP -->
+        		</div>
+        	</div>
+
+            <ul class="menu_phonestablettes">
+
+                <li class="buttons_index_portable">
+                    <a class="liens_index_portable" href="category.php?section=Illustration"><i class="fa fa-paint-brush" aria-hidden="true"></i> Illustration</a>
+                </li>
+
+                <li class="buttons_index_portable">
+                    <a class="liens_index_portable" href="category.php?section=Web"><i class="fa fa-mouse-pointer" aria-hidden="true"></i> Web</a>
+                </li>
+
+                <li class="buttons_index_portable">
+                    <a class="liens_index_portable" href="category.php?section=Communication"><i class="fa fa-pencil" aria-hidden="true"></i> Communication</a>
+                </li>
+
+                <li class="buttons_index_portable">
+                    <a class="liens_index_portable" href="category.php?section=Video"><i class="fa fa-play" aria-hidden="true"></i> Video</a>
+                </li>
+
+            </ul>
+        </nav>
+
+        <!-- The Modal Contact -->
+        <?php
+            include("modalContactPopUp.php");
+         ?>
+
+    </main><!-- MAIN CONTENT -->
+
+   <!-- FOOTER -->
+    <?php
+        include("footer.php");
+     ?>
+   <!-- FOOTER -->
+   <!-- On appelle notre js -->
+   <script src="js/mainIndex.js"></script>
+   <script src="js/mainContactPopUp.js"></script>
+
+</body>
+</html>

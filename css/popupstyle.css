@@ -1,0 +1,158 @@
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.5); /* Black w/ opacity */
+    z-index: 10; /* passe au dessus du footer */
+}
+
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    width: auto; /* Could be more or less, depending on screen size */
+}
+.modal h2 {
+    border: none;
+}
+
+/* The Close Button */
+.close {
+    color: #ffffff;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+/* Modal Header */
+.modal-header {
+    padding: 2px 16px;
+    background-color: #233237;
+    color: white;
+}
+/* Modal Footer */
+.modal-footer {
+    padding: 4px 16px;
+    background-color: #233237;
+    color: white;
+    text-align: center;
+}
+
+h3{
+    font-family: 'Quicksand', sans-serif;
+    color: #556B72;
+    font-weight: lighter;
+}
+
+/* Modal Content */
+.modal-content {
+    position: relative;
+    background-color: #233237;
+    margin: auto;
+    padding: 0;
+    height: auto;
+    max-width: 55%;
+    width:  auto;
+ /* taille à cahnger mais 100% ou auto ca prend la page j'ai add*/
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+.modal-body img{
+    width: 100%;
+    margin: 0 auto -0.5%;
+}
+
+.videoWrapper {
+	position: relative;
+	padding-bottom: 56.25%; /* 16:9 */
+	padding-top: 25px;
+	height: 0;
+}
+.videoWrapper iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.modal p{
+    text-align: center;
+}
+
+.modal strong{
+    text-decoration: none;
+    color: white;
+    font-style: normal;
+    font-weight: lighter;
+}
+
+.modal a{
+    text-decoration: none;
+    color: white;
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+    from {top: -300px; opacity: 0}
+    to {top: 0; opacity: 1}
+}
+
+@keyframes animatetop {
+    from {top: -300px; opacity: 0}
+    to {top: 0; opacity: 1}
+}
+
+/*******************************
+********* RESPONSIVE *********
+*******************************/
+/*Ecrans*/
+@media screen and (min-width: 1024px) and (max-width: 1600px) {
+
+}
+/*Tablette 740px de largeur (format paysage)*/
+@media screen and (min-width: 721px) and (max-width: 1024px) {
+    .modal-content{
+        max-width: 80%;
+    }
+}
+
+/*SmartPhone 720px de largeur (format portrait)*/
+@media screen and (min-width: 481px) and (max-width: 720px) {
+    .modal-content{
+        max-width: 80%;
+    }
+}
+/*Smart 480px de largeur (format portrait paysage)*/
+@media screen and (max-width: 480px) {
+    .modal-content{
+        max-width: 80%;
+    }
+
+    .modal-content h2{
+        font-size: 13px;
+    }
+
+    .modal-content em{
+        font-size: 11px;
+    }
+}
